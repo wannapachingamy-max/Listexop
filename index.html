@@ -1,322 +1,300 @@
 <!DOCTYPE html>
-<html lang="th">
-<head> 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>แฟ้มสะสมผลงาน & ช่องทางติดต่อ</title>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wannapa.studio - แฟ้มสะสมผลงาน & ช่องทางติดต่อ</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Prompt & IBM Plex Sans Thai -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts: Prompt & IBM Plex Sans Thai -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        studio: {
+                            bgStart: '#fbe8ed',
+                            bgEnd: '#fdf2f5',
+                            card: '#ffffff',
+                            textDark: '#4a202d',
+                            textMuted: '#7a4a58',
+                            btnStart: '#f2708a',
+                            btnEnd: '#e85370',
+                            btnHoverStart: '#e85873',
+                            btnHoverEnd: '#d83e5c',
+                            badgeBg: '#fde3eb',
+                            badgeText: '#d84968',
+                            borderPink: '#f7d0dc',
+                            borderHover: '#f0adb9'
+                        }
+                    },
+                    fontFamily: {
+                        prompt: ['Prompt', 'sans-serif'],
+                        ibm: ['IBM Plex Sans Thai', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'studio-card': '0 10px 28px -4px rgba(230, 130, 155, 0.15), 0 4px 10px -2px rgba(230, 130, 155, 0.08)',
+                        'studio-btn': '0 6px 18px rgba(232, 83, 112, 0.35)',
+                        'studio-btn-hover': '0 8px 22px rgba(232, 83, 112, 0.45)',
+                    }
+                }
+            }
+        }
+    </script>
 
-  <style>
-    :root {
-      --bg-color: #fdf6f8;
-      --card-bg: rgba(255, 255, 255, 0.85);
-      --pink-soft: #f4c2d7;
-      --pink-medium: #ea9ab2;
-      --pink-accent: #d9779b;
-      --pink-dark: #8c425e;
-      --text-main: #4a3842;
-      --shadow: 0 10px 30px rgba(234, 154, 178, 0.15);
-      --font-heading: 'Prompt', sans-serif;
-      --font-body: 'IBM Plex Sans Thai', sans-serif;
-    }
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            background: linear-gradient(180deg, #fbe8ed 0%, #fdf2f5 50%, #fbe8ed 100%);
+            color: #4a202d;
+            min-height: 100vh;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Prompt', sans-serif;
+        }
 
-    body {
-      background-color: var(--bg-color);
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(244, 194, 215, 0.3) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(234, 154, 178, 0.2) 0%, transparent 40%);
-      font-family: var(--font-body);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
+        /* Pastel Pink Fluffy Fur Texture Effect matching Title */
+        .fur-text-title {
+            background-image: 
+                radial-gradient(circle at 50% 50%, #fce1e8 22%, transparent 22%),
+                radial-gradient(circle at 20% 80%, #f7a8b8 25%, transparent 25%),
+                radial-gradient(circle at 85% 15%, #fbe8ed 30%, transparent 30%),
+                radial-gradient(circle at 40% 40%, #f38da1 18%, transparent 18%),
+                linear-gradient(135deg, #e85370 0%, #f2708a 50%, #d84968 100%);
+            background-size: 10px 10px, 14px 14px, 16px 16px, 8px 8px, 100% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 3px 5px rgba(216, 73, 104, 0.25));
+        }
 
-    .container {
-      width: 100%;
-      max-width: 800px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
+        /* Smooth Transition */
+        .card-transition {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    /* --- ส่วนหัว (HEADER) --- */
-    header {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      padding: 40px 30px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-    }
+        .card-transition:hover {
+            transform: translateY(-4px);
+        }
 
-    .fur-text {
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      
-      /* เอฟเฟกต์เท็กเจอร์ขนแมวพาสเทล */
-      background-color: var(--pink-soft);
-      background-image: 
-        repeating-radial-gradient(circle at 50% 50%, #f7d6e6, #eea1be 3px, transparent 6px),
-        repeating-linear-gradient(45deg, #f4c2d7 0%, #e082a6 100%);
-      background-size: 100px 100px, 100% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      
-      /* เงาข้อความนุ่มๆ */
-      filter: drop-shadow(2px 4px 6px rgba(217, 119, 155, 0.25));
-      margin-bottom: 20px;
-    }
-
-    .intro-box {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .intro-text {
-      color: #614652;
-    }
-
-    .warning-text {
-      color: var(--pink-accent);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    /* --- ส่วนบอดี้ (BODY GRID) --- */
-    .body-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-    }
-
-    .style-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 25px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-    }
-
-    .style-card:hover {
-      transform: translateY(-5deg);
-      box-shadow: 0 15px 35px rgba(234, 154, 178, 0.3);
-      border-color: var(--pink-soft);
-    }
-
-    .style-title {
-      font-family: var(--font-heading);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--pink-dark);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 12px 20px;
-      background: linear-gradient(135deg, var(--pink-soft) 0%, var(--pink-medium) 100%);
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(234, 154, 178, 0.3);
-    }
-
-    .btn-link:hover {
-      background: linear-gradient(135deg, var(--pink-medium) 0%, var(--pink-accent) 100%);
-      box-shadow: 0 6px 16px rgba(217, 119, 155, 0.4);
-    }
-
-    /* --- ส่วนท้าย (FOOTER) --- */
-    footer {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-    }
-
-    .footer-title {
-      font-family: var(--font-heading);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--pink-dark);
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .contact-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 12px 20px;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 400;
-      transition: all 0.3s ease;
-      border: 1px solid transparent;
-    }
-
-    .contact-item:hover {
-      background: white;
-      border-color: var(--pink-soft);
-      transform: translateX(5px);
-    }
-
-    .contact-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: var(--pink-soft);
-      color: var(--pink-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-    }
-
-    @media (max-width: 600px) {
-      .fur-text {
-        font-size: 1.8rem;
-      }
-      .body-section {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbe8ed;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f7a8b8;
+            border-radius: 999px;
+        }
+    </style>
 </head>
-<body>
+<body class="flex flex-col justify-between selection:bg-studio-badgeBg selection:text-studio-badgeText py-6 sm:py-10 px-4">
 
-  <div class="container">
-    
-    <!-- ส่วนหัว -->
-    <header>
-      <h1 class="fur-text">เเนวงานที่ในร้านมี</h1>
-      <div class="intro-box">
-        <p class="intro-text">“ สมารถสอบถามราคาเเละระยะเวลาได้ตลอดเลยนะคะ ”</p>
-        <p class="warning-text"><i class="fa-solid fa-circle-exclamation"></i> “ ทางร้านไม่รับทำแนวเฮดค่ะ ไม่ถนัดจริงๆ ”</p>
-      </div>
-    </header>
+    <!-- MAIN CONTAINER -->
+    <div class="max-w-3xl mx-auto w-full space-y-6">
 
-    <!-- ส่วนบอดี้ -->
-    <section class="body-section">
-      
-      <!-- บล็อก 1 -->
-      <div class="style-card">
-        <div class="style-title">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> แนว เเฟรี่เทล
-        </div>
-        <a href="https://drive.google.com/drive/folders/1wvD7MiZeAKr39Q8_v3h3lNnM9XGQhuyc" target="_blank" class="btn-link">
-          <i class="fa-solid fa-folder-open"></i> ดูผลงาน
-        </a>
-      </div>
+        <!-- HEADER SECTION -->
+        <header class="bg-studio-card rounded-[28px] p-6 sm:p-10 shadow-studio-card border border-white/80 text-center relative overflow-hidden">
+            
+            <!-- Top Status Pill matching image_2 -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-studio-badgeBg border border-studio-borderPink text-studio-badgeText text-xs font-semibold tracking-wide mb-6">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                เปิดรับออเดอร์งานออกแบบ / คิวงานว่างพร้อมทำ
+            </div>
 
-      <!-- บล็อก 2 -->
-      <div class="style-card">
-        <div class="style-title">
-          <i class="fa-solid fa-sparkles"></i> แนว ออโรร่า
-        </div>
-        <a href="https://drive.google.com/drive/folders/1HLECRbF3SRanqjCS10HI3TqVD5zXf3M8" target="_blank" class="btn-link">
-          <i class="fa-solid fa-folder-open"></i> ดูผลงาน
-        </a>
-      </div>
+            <!-- Fur Texture Title -->
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 fur-text-title py-1">
+                “ แนวงานที่มีในร้าน ”
+            </h1>
 
-      <!-- บล็อก 3 -->
-      <div class="style-card">
-        <div class="style-title">
-          <i class="fa-solid fa-rectangle-ad"></i> แนว Ads
-        </div>
-        <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" target="_blank" class="btn-link">
-          <i class="fa-solid fa-folder-open"></i> ดูผลงาน
-        </a>
-      </div>
+            <!-- Quotes Box -->
+            <div class="bg-studio-bgEnd/60 border border-studio-borderPink rounded-2xl p-4 sm:p-5 text-center max-w-xl mx-auto space-y-2 shadow-inner">
+                <p class="text-studio-textDark text-sm sm:text-base font-medium">
+                    “ สามารถสอบถามราคาและระยะเวลาได้ตลอดเลยนะคะ ”
+                </p>
+                <div class="flex items-center justify-center gap-2 text-studio-badgeText text-xs sm:text-sm font-semibold pt-1">
+                    <i class="fa-solid fa-circle-exclamation text-base"></i>
+                    <span>“ ทางร้านไม่รับทำแนวเฮดค่ะ ไม่ถนัดจริงๆ ”</span>
+                </div>
+            </div>
+        </header>
 
-      <!-- บล็อก 4 -->
-      <div class="style-card">
-        <div class="style-title">
-          <i class="fa-solid fa-bullhorn"></i> แนว กึ่ง Ads
-        </div>
-        <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" target="_blank" class="btn-link">
-          <i class="fa-solid fa-folder-open"></i> ดูผลงาน
-        </a>
-      </div>
+        <!-- BODY SECTION: CATEGORIES & WORK LINKS -->
+        <main class="space-y-4">
+            
+            <div class="flex items-center justify-between px-2">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-6 bg-studio-btnEnd rounded-full inline-block"></span>
+                    <h2 class="text-lg sm:text-xl font-bold text-studio-textDark font-heading">บริการและผลงานของเรา</h2>
+                </div>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-studio-badgeBg text-studio-badgeText border border-studio-borderPink">
+                    Pastel Cute Style
+                </span>
+            </div>
 
-    </section>
+            <!-- 2x2 Grid Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-    <!-- ส่วนท้าย -->
-    <footer>
-      <h2 class="footer-title">ช่องทางติดต่อ</h2>
-      <div class="contact-list">
-        
-        <a href="https://www.facebook.com/profile.php?id=61593687952144" target="_blank" class="contact-item">
-          <div class="contact-icon"><i class="fa-brands fa-facebook-f"></i></div>
-          <span>Facebook</span>
-        </a>
+                <!-- 1. แนว แฟรี่เทล -->
+                <div class="bg-studio-card rounded-[24px] p-6 shadow-studio-card border border-white/90 card-transition flex flex-col justify-between text-center gap-5">
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-12 h-12 rounded-2xl bg-studio-badgeBg text-studio-badgeText flex items-center justify-center text-xl shadow-xs border border-studio-borderPink">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-studio-textDark font-heading">1. แนว แฟรี่เทล</h3>
+                    </div>
 
-        <div class="contact-item">
-          <div class="contact-icon"><i class="fa-brands fa-line"></i></div>
-          <span>Line Official : -</span>
-        </div>
+                    <a href="https://drive.google.com/drive/folders/1wvD7MiZeAKr39Q8_v3h3lNnM9XGQhuyc" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="w-full inline-flex items-center justify-center gap-2.5 py-3 px-5 rounded-full bg-gradient-to-r from-studio-btnStart to-studio-btnEnd hover:from-studio-btnHoverStart hover:to-studio-btnHoverEnd text-white font-bold text-sm shadow-studio-btn hover:shadow-studio-btn-hover transition-all">
+                        <i class="fa-solid fa-folder-open text-base"></i>
+                        <span>ดูตัวอย่างผลงาน</span>
+                    </a>
+                </div>
 
-        <a href="https://m.facebook.com/groups/822855034239677/?ref=share" target="_blank" class="contact-item">
-          <div class="contact-icon"><i class="fa-solid fa-users"></i></div>
-          <span>กลุ่มที่เเอดมินดูเเล</span>
-        </a>
+                <!-- 2. แนว ออโรร่า -->
+                <div class="bg-studio-card rounded-[24px] p-6 shadow-studio-card border border-white/90 card-transition flex flex-col justify-between text-center gap-5">
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-12 h-12 rounded-2xl bg-studio-badgeBg text-studio-badgeText flex items-center justify-center text-xl shadow-xs border border-studio-borderPink">
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-studio-textDark font-heading">2. แนว ออโรร่า</h3>
+                    </div>
 
-      </div>
-    </footer>
+                    <a href="https://drive.google.com/drive/folders/1HLECRbF3SRanqjCS10HI3TqVD5zXf3M8" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="w-full inline-flex items-center justify-center gap-2.5 py-3 px-5 rounded-full bg-gradient-to-r from-studio-btnStart to-studio-btnEnd hover:from-studio-btnHoverStart hover:to-studio-btnHoverEnd text-white font-bold text-sm shadow-studio-btn hover:shadow-studio-btn-hover transition-all">
+                        <i class="fa-solid fa-folder-open text-base"></i>
+                        <span>ดูตัวอย่างผลงาน</span>
+                    </a>
+                </div>
 
-  </div>
+                <!-- 3. แนว Ads -->
+                <div class="bg-studio-card rounded-[24px] p-6 shadow-studio-card border border-white/90 card-transition flex flex-col justify-between text-center gap-5">
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-12 h-12 rounded-2xl bg-studio-badgeBg text-studio-badgeText flex items-center justify-center text-xl shadow-xs border border-studio-borderPink">
+                            <i class="fa-solid fa-rectangle-ad"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-studio-textDark font-heading">3. แนว Ads</h3>
+                    </div>
 
+                    <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="w-full inline-flex items-center justify-center gap-2.5 py-3 px-5 rounded-full bg-gradient-to-r from-studio-btnStart to-studio-btnEnd hover:from-studio-btnHoverStart hover:to-studio-btnHoverEnd text-white font-bold text-sm shadow-studio-btn hover:shadow-studio-btn-hover transition-all">
+                        <i class="fa-solid fa-folder-open text-base"></i>
+                        <span>ดูตัวอย่างผลงาน</span>
+                    </a>
+                </div>
+
+                <!-- 4. แนว กึ่ง Ads -->
+                <div class="bg-studio-card rounded-[24px] p-6 shadow-studio-card border border-white/90 card-transition flex flex-col justify-between text-center gap-5">
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-12 h-12 rounded-2xl bg-studio-badgeBg text-studio-badgeText flex items-center justify-center text-xl shadow-xs border border-studio-borderPink">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-studio-textDark font-heading">4. แนว กึ่ง Ads</h3>
+                    </div>
+
+                    <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="w-full inline-flex items-center justify-center gap-2.5 py-3 px-5 rounded-full bg-gradient-to-r from-studio-btnStart to-studio-btnEnd hover:from-studio-btnHoverStart hover:to-studio-btnHoverEnd text-white font-bold text-sm shadow-studio-btn hover:shadow-studio-btn-hover transition-all">
+                        <i class="fa-solid fa-folder-open text-base"></i>
+                        <span>ดูตัวอย่างผลงาน</span>
+                    </a>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- FOOTER / CONTACT SECTION -->
+        <footer class="bg-studio-card rounded-[28px] p-6 sm:p-8 shadow-studio-card border border-white/90 space-y-6">
+            <h2 class="text-xl font-bold font-heading text-studio-textDark text-center">ช่องทางติดต่อ</h2>
+
+            <div class="space-y-3">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=61593687952144" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="bg-studio-bgEnd/50 hover:bg-studio-badgeBg p-4 rounded-2xl border border-studio-borderPink transition-all flex items-center justify-between group">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-studio-badgeBg text-studio-badgeText flex items-center justify-center text-lg shrink-0 border border-studio-borderPink">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <span class="font-semibold text-studio-textDark text-sm sm:text-base">Facebook</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-studio-textMuted group-hover:text-studio-badgeText group-hover:translate-x-1 transition-all"></i>
+                </a>
+
+                <!-- Line Official -->
+                <div class="bg-studio-bgEnd/50 p-4 rounded-2xl border border-studio-borderPink flex items-center justify-between">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-studio-badgeBg text-studio-badgeText flex items-center justify-center text-lg shrink-0 border border-studio-borderPink">
+                            <i class="fa-brands fa-line"></i>
+                        </div>
+                        <span class="font-semibold text-studio-textDark text-sm sm:text-base">Line Official : -</span>
+                    </div>
+                    <button onclick="copyLineId()" class="px-3.5 py-1.5 text-xs font-semibold text-studio-badgeText bg-white hover:bg-studio-badgeBg rounded-xl transition-all border border-studio-borderPink shadow-xs">
+                        คัดลอก
+                    </button>
+                </div>
+
+                <!-- Facebook Group -->
+                <a href="https://m.facebook.com/groups/822855034239677/?ref=share" 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="bg-studio-bgEnd/50 hover:bg-studio-badgeBg p-4 rounded-2xl border border-studio-borderPink transition-all flex items-center justify-between group">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-studio-badgeBg text-studio-badgeText flex items-center justify-center text-lg shrink-0 border border-studio-borderPink">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <span class="font-semibold text-studio-textDark text-sm sm:text-base">กลุ่มที่เเอดมินดูเเล</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-studio-textMuted group-hover:text-studio-badgeText group-hover:translate-x-1 transition-all"></i>
+                </a>
+            </div>
+
+            <div class="text-center pt-2 text-xs text-studio-textMuted">
+                © Wannapa.studio • All Rights Reserved
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-studio-textDark text-white px-5 py-3 rounded-2xl text-xs sm:text-sm font-medium shadow-2xl flex items-center gap-2 opacity-0 translate-y-10 transition-all duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toast-text">คัดลอก Line ID เรียบร้อยแล้วค่ะ</span>
+    </div>
+
+    <script>
+        function copyLineId() {
+            const lineId = "-";
+            const temp = document.createElement("textarea");
+            temp.value = lineId;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand("copy");
+            document.body.removeChild(temp);
+
+            const toast = document.getElementById("toast");
+            toast.classList.remove("opacity-0", "translate-y-10");
+            
+            setTimeout(() => {
+                toast.classList.add("opacity-0", "translate-y-10");
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
-
