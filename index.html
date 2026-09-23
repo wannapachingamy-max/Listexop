@@ -1,1 +1,322 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แฟ้มสะสมผลงาน & ช่องทางติดต่อ</title>
+  
+  <!-- Google Fonts: Prompt & IBM Plex Sans Thai -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-color: #fdf6f8;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --pink-soft: #f4c2d7;
+      --pink-medium: #ea9ab2;
+      --pink-accent: #d9779b;
+      --pink-dark: #8c425e;
+      --text-main: #4a3842;
+      --shadow: 0 10px 30px rgba(234, 154, 178, 0.15);
+      --font-heading: 'Prompt', sans-serif;
+      --font-body: 'IBM Plex Sans Thai', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(244, 194, 215, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(234, 154, 178, 0.2) 0%, transparent 40%);
+      font-family: var(--font-body);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* --- ส่วนหัว (HEADER) --- */
+    header {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .fur-text {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      
+      /* เอฟเฟกต์เท็กเจอร์ขนแมวพาสเทล */
+      background-color: var(--pink-soft);
+      background-image: 
+        repeating-radial-gradient(circle at 50% 50%, #f7d6e6, #eea1be 3px, transparent 6px),
+        repeating-linear-gradient(45deg, #f4c2d7 0%, #e082a6 100%);
+      background-size: 100px 100px, 100% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+      /* เงาข้อความนุ่มๆ */
+      filter: drop-shadow(2px 4px 6px rgba(217, 119, 155, 0.25));
+      margin-bottom: 20px;
+    }
+
+    .intro-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .intro-text {
+      color: #614652;
+    }
+
+    .warning-text {
+      color: var(--pink-accent);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* --- ส่วนบอดี้ (BODY GRID) --- */
+    .body-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .style-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .style-card:hover {
+      transform: translateY(-5deg);
+      box-shadow: 0 15px 35px rgba(234, 154, 178, 0.3);
+      border-color: var(--pink-soft);
+    }
+
+    .style-title {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--pink-dark);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, var(--pink-soft) 0%, var(--pink-medium) 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(234, 154, 178, 0.3);
+    }
+
+    .btn-link:hover {
+      background: linear-gradient(135deg, var(--pink-medium) 0%, var(--pink-accent) 100%);
+      box-shadow: 0 6px 16px rgba(217, 119, 155, 0.4);
+    }
+
+    /* --- ส่วนท้าย (FOOTER) --- */
+    footer {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--pink-dark);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 400;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .contact-item:hover {
+      background: white;
+      border-color: var(--pink-soft);
+      transform: translateX(5px);
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--pink-soft);
+      color: var(--pink-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+      .fur-text {
+        font-size: 1.8rem;
+      }
+      .body-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- ส่วนหัว -->
+    <header>
+      <h1 class="fur-text">เเนวงานที่ในร้านมี</h1>
+      <div class="intro-box">
+        <p class="intro-text">“ สมารถสอบถามราคาเเละระยะเวลาได้ตลอดเลยนะคะ ”</p>
+        <p class="warning-text"><i class="fa-solid fa-circle-exclamation"></i> “ ทางร้านไม่รับทำแนวเฮดค่ะ ไม่ถนัดจริงๆ ”</p>
+      </div>
+    </header>
+
+    <!-- ส่วนบอดี้ -->
+    <section class="body-section">
+      
+      <!-- บล็อก 1 -->
+      <div class="style-card">
+        <div class="style-title">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> แนว เเฟรี่เทล
+        </div>
+        <a href="https://drive.google.com/drive/folders/1wvD7MiZeAKr39Q8_v3h3lNnM9XGQhuyc" target="_blank" class="btn-link">
+          <i class="fa-solid fa-folder-open"></i> ดูผลงาน
+        </a>
+      </div>
+
+      <!-- บล็อก 2 -->
+      <div class="style-card">
+        <div class="style-title">
+          <i class="fa-solid fa-sparkles"></i> แนว ออโรร่า
+        </div>
+        <a href="https://drive.google.com/drive/folders/1HLECRbF3SRanqjCS10HI3TqVD5zXf3M8" target="_blank" class="btn-link">
+          <i class="fa-solid fa-folder-open"></i> ดูผลงาน
+        </a>
+      </div>
+
+      <!-- บล็อก 3 -->
+      <div class="style-card">
+        <div class="style-title">
+          <i class="fa-solid fa-rectangle-ad"></i> แนว Ads
+        </div>
+        <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" target="_blank" class="btn-link">
+          <i class="fa-solid fa-folder-open"></i> ดูผลงาน
+        </a>
+      </div>
+
+      <!-- บล็อก 4 -->
+      <div class="style-card">
+        <div class="style-title">
+          <i class="fa-solid fa-bullhorn"></i> แนว กึ่ง Ads
+        </div>
+        <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" target="_blank" class="btn-link">
+          <i class="fa-solid fa-folder-open"></i> ดูผลงาน
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ส่วนท้าย -->
+    <footer>
+      <h2 class="footer-title">ช่องทางติดต่อ</h2>
+      <div class="contact-list">
+        
+        <a href="https://www.facebook.com/profile.php?id=61593687952144" target="_blank" class="contact-item">
+          <div class="contact-icon"><i class="fa-brands fa-facebook-f"></i></div>
+          <span>Facebook</span>
+        </a>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-brands fa-line"></i></div>
+          <span>Line Official : -</span>
+        </div>
+
+        <a href="https://m.facebook.com/groups/822855034239677/?ref=share" target="_blank" class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-users"></i></div>
+          <span>กลุ่มที่เเอดมินดูเเล</span>
+        </a>
+
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
 
