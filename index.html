@@ -48,7 +48,6 @@
       overflow-x: hidden;
     }
 
-    /* --- กลีบดอกไม้โปรยลงมา (FALLING PETALS) --- */
     .petals-container {
       position: fixed;
       top: 0;
@@ -96,7 +95,6 @@
       z-index: 2;
     }
 
-    /* --- Status Badge Top (พร้อมไฟกระพริบ) --- */
     .status-badge-wrap {
       display: flex;
       justify-content: center;
@@ -148,7 +146,6 @@
       100% { transform: scale(1.8); opacity: 0; }
     }
 
-    /* --- Header Section (ไม่มีกรอบการ์ดใหญ่) --- */
     header {
       padding: 10px 10px 0px;
       text-align: center;
@@ -225,7 +222,6 @@
       gap: 6px;
     }
 
-    /* --- Section Bar --- */
     .section-bar {
       display: flex;
       justify-content: space-between;
@@ -262,7 +258,6 @@
       font-weight: 500;
     }
 
-    /* --- Grid Section --- */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -288,7 +283,6 @@
       box-shadow: 0 16px 32px rgba(220, 120, 150, 0.22);
     }
 
-    /* อุ้งเท้าแมวมุมการ์ด */
     .card-cat-corner-tr {
       position: absolute;
       top: 10px;
@@ -319,15 +313,27 @@
       opacity: 0.9;
     }
 
-    /* รูปพรีวิวตัวอย่างผลงานในการ์ด */
     .card-img-preview {
       width: 100%;
-      height: 110px;
+      height: 120px;
       border-radius: 16px;
       object-fit: cover;
       margin-bottom: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
+    }
+
+    .multi-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .multi-img-grid .card-img-preview {
+      height: 100px;
+      margin-bottom: 0;
     }
 
     .style-card:hover .card-img-preview {
@@ -364,7 +370,6 @@
       transform: translateY(-1px);
     }
 
-    /* --- Footer Card --- */
     footer {
       background: var(--card-bg);
       border-radius: 28px;
@@ -469,7 +474,7 @@
 
   <div class="container">
     
-    <!-- Status Badge พร้อมไฟกระพริบ -->
+    <!-- Status Badge -->
     <div class="status-badge-wrap">
       <div class="status-badge">
         <div class="status-dot-container">
@@ -480,10 +485,10 @@
       </div>
     </div>
 
-    <!-- Header Section (ไม่มีกรอบการ์ดใหญ่) -->
+    <!-- Header Section -->
     <header>
       <div class="avatar-wrapper">
-        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=300&auto=format&fit=crop" alt="Mascot Avatar" class="mascot-avatar">
+        <img src="IMG_2374.jpeg" alt="Mascot Avatar" class="mascot-avatar" onerror="this.src='https://placehold.co/150x150/f472b6/ffffff?text=Studio'">
         <div class="cat-peek-header"><i class="fa-solid fa-cat"></i></div>
       </div>
 
@@ -509,48 +514,51 @@
     <!-- Body Section (Grid) -->
     <section class="grid-container">
       
-      <!-- บล็อก 1 -->
+      <!-- บล็อก 1: แนว แฟรี่เทล -->
       <div class="style-card">
         <div class="card-cat-corner-tr"><i class="fa-solid fa-paw"></i></div>
         <div class="card-cat-corner-bl"><i class="fa-solid fa-cat"></i></div>
         
-        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=400&auto=format&fit=crop" alt="Fairytale Style" class="card-img-preview">
+        <img src="202_20260924095102.png" alt="Fairytale Style" class="card-img-preview" onerror="this.src='https://placehold.co/400x300/fbcfe8/d84968?text=Fairytale'">
         <div class="card-num-title">1. แนว แฟรี่เทล</div>
         <a href="https://drive.google.com/drive/folders/1wvD7MiZeAKr39Q8_v3h3lNnM9XGQhuyc" target="_blank" class="btn-drive">
           <i class="fa-solid fa-folder-closed"></i> ดูตัวอย่างผลงาน
         </a>
       </div>
 
-      <!-- บล็อก 2 -->
+      <!-- บล็อก 2: แนว ออโรร่า -->
       <div class="style-card">
         <div class="card-cat-corner-tr"><i class="fa-solid fa-cat"></i></div>
         <div class="card-cat-corner-bl"><i class="fa-solid fa-paw"></i></div>
 
-        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop" alt="Aurora Style" class="card-img-preview">
+        <img src="61_20260924094945.png" alt="Aurora Style" class="card-img-preview" onerror="this.src='https://placehold.co/400x300/fbcfe8/d84968?text=Aurora'">
         <div class="card-num-title">2. แนว ออโรร่า</div>
         <a href="https://drive.google.com/drive/folders/1HLECRbF3SRanqjCS10HI3TqVD5zXf3M8" target="_blank" class="btn-drive">
           <i class="fa-solid fa-folder-closed"></i> ดูตัวอย่างผลงาน
         </a>
       </div>
 
-      <!-- บล็อก 3 -->
+      <!-- บล็อก 3 : แนว Ads -->
       <div class="style-card">
         <div class="card-cat-corner-tr"><i class="fa-solid fa-paw"></i></div>
         <div class="card-cat-corner-bl"><i class="fa-solid fa-cat"></i></div>
 
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop" alt="Ads Style" class="card-img-preview">
+        <img src="153_20260924094922.png" alt="Ads Style" class="card-img-preview" onerror="this.src='https://placehold.co/400x300/fbcfe8/d84968?text=Ads'">
         <div class="card-num-title">3. แนว Ads</div>
         <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" target="_blank" class="btn-drive">
           <i class="fa-solid fa-folder-closed"></i> ดูตัวอย่างผลงาน
         </a>
       </div>
 
-      <!-- บล็อก 4 -->
+      <!-- บล็อก 4: แนว กึ่ง Ads (แสดง 2 รูปคู่กัน) -->
       <div class="style-card">
         <div class="card-cat-corner-tr"><i class="fa-solid fa-cat"></i></div>
         <div class="card-cat-corner-bl"><i class="fa-solid fa-paw"></i></div>
 
-        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=400&auto=format&fit=crop" alt="Semi Ads Style" class="card-img-preview">
+        <div class="multi-img-grid">
+          <img src="290_20260912105403.png" alt="Semi Ads Style 1" class="card-img-preview" onerror="this.src='https://placehold.co/200x200/fbcfe8/d84968?text=Semi+Ads+1'">
+          <img src="292_20260912105430.png" alt="Semi Ads Style 2" class="card-img-preview" onerror="this.src='https://placehold.co/200x200/fbcfe8/d84968?text=Semi+Ads+2'">
+        </div>
         <div class="card-num-title">4. แนว กึ่ง Ads</div>
         <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" target="_blank" class="btn-drive">
           <i class="fa-solid fa-folder-closed"></i> ดูตัวอย่างผลงาน
@@ -594,7 +602,6 @@
 
   </div>
 
-  <!-- Script สร้างกลีบดอกไม้ร่วง -->
   <script>
     const container = document.getElementById('petalsContainer');
     const petalCount = 18;
