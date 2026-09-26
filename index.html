@@ -48,6 +48,7 @@
       overflow-x: hidden;
     }
 
+    /* Falling Petals Background */
     .petals-container {
       position: fixed;
       top: 0;
@@ -95,23 +96,33 @@
       z-index: 2;
     }
 
+    /* Status Badges Header */
     .status-badge-wrap {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 8px;
     }
 
     .status-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       background: #fde0e8;
       border: 1px solid #f9a8d4;
-      padding: 6px 18px;
+      padding: 6px 16px;
       border-radius: 20px;
       font-size: 0.82rem;
       font-weight: 500;
       color: var(--pink-badge-text);
-      box-shadow: 0 4px 12px rgba(216, 73, 104, 0.15);
+      box-shadow: 0 4px 12px rgba(216, 73, 104, 0.12);
+    }
+
+    .status-badge.sub-badge {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #fbcfe8;
+      color: #9d3350;
+      font-size: 0.78rem;
     }
 
     .status-dot-container {
@@ -259,6 +270,7 @@
       font-weight: 500;
     }
 
+    /* Cards & Grid Styling */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -304,7 +316,6 @@
       z-index: 3;
     }
 
-    /* Container for single image */
     .img-container-single {
       width: 100%;
       height: 130px;
@@ -314,7 +325,6 @@
       background: #fde8ee;
     }
 
-    /* Container for double image grid (กึ่ง Ads) */
     .img-container-double {
       width: 100%;
       height: 130px;
@@ -349,7 +359,41 @@
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* Refined & Smaller Description Box */
+    .card-desc-box {
+      background: #fff5f8;
+      border: 1px solid #fce3ec;
+      border-radius: 12px;
+      padding: 6px 10px;
       margin-bottom: 12px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .card-desc-item {
+      font-size: 0.76rem;
+      color: #8c495c;
+      line-height: 1.35;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .card-desc-item i {
+      font-size: 0.72rem;
+      color: #e85370;
+      flex-shrink: 0;
+    }
+
+    .card-desc-item.warning-text {
+      color: #c93b58;
+      font-weight: 500;
     }
 
     .btn-drive {
@@ -367,6 +411,7 @@
       gap: 6px;
       box-shadow: 0 4px 12px rgba(232, 83, 112, 0.3);
       transition: all 0.25s ease;
+      margin-top: auto;
     }
 
     .btn-drive:hover {
@@ -467,7 +512,7 @@
 
   <div class="container">
     
-    <!-- Status Badge -->
+    <!-- Status Badges Header -->
     <div class="status-badge-wrap">
       <div class="status-badge">
         <div class="status-dot-container">
@@ -475,6 +520,10 @@
           <div class="status-pulse"></div>
         </div>
         เปิดรับออเดอร์งานออกแบบ / คิวงานว่างพร้อมทำ
+      </div>
+      <div class="status-badge sub-badge">
+        <i class="fa-solid fa-camera-retro" style="color: #e85370;"></i>
+        แคปรูปสอบถามได้เลยค่ะ
       </div>
     </div>
 
@@ -495,7 +544,7 @@
       </div>
     </header>
 
-    <!-- Section Title -->
+    <!-- Section Title Bar -->
     <div class="section-bar">
       <div class="section-title-wrap">
         <div class="pink-indicator"></div>
@@ -504,7 +553,7 @@
       <span class="section-tag">Pastel Cute Style</span>
     </div>
 
-    <!-- Body Section (Grid) -->
+    <!-- Grid Portfolio Section -->
     <section class="grid-container">
       
       <!-- 1. แนว แฟรี่เทล -->
@@ -516,7 +565,16 @@
           <img src="./IMG_2397.png" alt="แนว แฟรี่เทล" class="card-img-preview">
         </div>
         <div class="card-num-title">1. แนว แฟรี่เทล</div>
-        <p class="card-desc">หากสนใจงานชิ้นไหนสมารถเเคปมาให้ทางร้านดูได้เลยค่ะ งดก็อปงานทุกกรณี</p>
+        
+        <div class="card-desc-box">
+          <span class="card-desc-item">
+            <i class="fa-solid fa-camera"></i> สนใจชิ้นไหนแคปส่งให้ดูได้เลยค่ะ
+          </span>
+          <span class="card-desc-item warning-text">
+            <i class="fa-solid fa-ban"></i> งดก็อปงานทุกกรณี
+          </span>
+        </div>
+
         <a href="https://drive.google.com/drive/folders/1wvD7MiZeAKr39Q8_v3h3lNnM9XGQhuyc" target="_blank" class="btn-drive">
           <i class="fa-solid fa-folder-closed"></i> ดูตัวอย่างผลงาน
         </a>
@@ -531,7 +589,16 @@
           <img src="./IMG_2398.png" alt="แนว ออโรร่า" class="card-img-preview">
         </div>
         <div class="card-num-title">2. แนว ออโรร่า</div>
-        <p class="card-desc">หากสนใจงานชิ้นไหนสมารถเเคปมาให้ทางร้านดูได้เลยค่ะ งดก็อปงานทุกกรณี</p>
+
+        <div class="card-desc-box">
+          <span class="card-desc-item">
+            <i class="fa-solid fa-camera"></i> สนใจชิ้นไหนแคปส่งให้ดูได้เลยค่ะ
+          </span>
+          <span class="card-desc-item warning-text">
+            <i class="fa-solid fa-ban"></i> งดก็อปงานทุกกรณี
+          </span>
+        </div>
+
         <a href="https://drive.google.com/drive/folders/1HLECRbF3SRanqjCS10HI3TqVD5zXf3M8" target="_blank" class="btn-drive">
           <i class="fa-solid fa-folder-closed"></i> ดูตัวอย่างผลงาน
         </a>
@@ -546,7 +613,16 @@
           <img src="./IMG_2396.png" alt="แนว Ads" class="card-img-preview">
         </div>
         <div class="card-num-title">3. แนว Ads</div>
-        <p class="card-desc">หากสนใจงานชิ้นไหนสมารถเเคปมาให้ทางร้านดูได้เลยค่ะ งดก็อปงานทุกกรณี</p>
+
+        <div class="card-desc-box">
+          <span class="card-desc-item">
+            <i class="fa-solid fa-camera"></i> สนใจชิ้นไหนแคปส่งให้ดูได้เลยค่ะ
+          </span>
+          <span class="card-desc-item warning-text">
+            <i class="fa-solid fa-ban"></i> งดก็อปงานทุกกรณี
+          </span>
+        </div>
+
         <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" target="_blank" class="btn-drive">
           <i class="fa-solid fa-folder-closed"></i> ดูตัวอย่างผลงาน
         </a>
@@ -566,7 +642,16 @@
           </div>
         </div>
         <div class="card-num-title">4. แนว กึ่ง Ads</div>
-        <p class="card-desc">หากสนใจงานชิ้นไหนสมารถเเคปมาให้ทางร้านดูได้เลยค่ะ งดก็อปงานทุกกรณี</p>
+
+        <div class="card-desc-box">
+          <span class="card-desc-item">
+            <i class="fa-solid fa-camera"></i> สนใจชิ้นไหนแคปส่งให้ดูได้เลยค่ะ
+          </span>
+          <span class="card-desc-item warning-text">
+            <i class="fa-solid fa-ban"></i> งดก็อปงานทุกกรณี
+          </span>
+        </div>
+
         <a href="https://drive.google.com/drive/folders/15P-3JibpcTb54qQjCn7s4YKpStIodo8E" target="_blank" class="btn-drive">
           <i class="fa-solid fa-folder-closed"></i> ดูตัวอย่างผลงาน
         </a>
